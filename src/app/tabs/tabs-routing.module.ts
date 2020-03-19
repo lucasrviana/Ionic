@@ -57,11 +57,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/intro/intro.module',
+    redirectTo: '../tab1/tab1.module',
     pathMatch: 'full'
   }
 ];
-
+console.log(routes);
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
