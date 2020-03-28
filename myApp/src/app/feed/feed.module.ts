@@ -17,4 +17,6 @@ import { FeedPage } from './feed.page';
   ],
   declarations: [FeedPage]
 })
-export class FeedPageModule {}
+export class FeedPageModule {
+  
+}
