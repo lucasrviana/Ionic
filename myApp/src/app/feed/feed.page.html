@@ -5,24 +5,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-card *ngFor="let item of feed">
+    <ion-card *ngFor="let item of filmes">
         <ion-item>
-            <ion-avatar item-start>
-                <img (src)=item.Img_pessoa>
-            </ion-avatar>
+            <!-- <ion-avatar item-start *ngIf="item.poster_path">
+                <img (src)=item.poster_path>
+            </ion-avatar> -->
             <ion-card-header>
-                <ion-card-title class="titulo">{{item.Nome_pessoa}}</ion-card-title>
-                <ion-card-subtitle>{{item.data_feed}}</ion-card-subtitle>
+                <ion-card-title class="titulo">{{item.title}}</ion-card-title>
+                <ion-card-subtitle>{{item.release_date| date:'full':'+0200':'pt'}}</ion-card-subtitle>
+                <!-- <ion-card-subtitle>{{item.release_date| date: "EEEE d MMMM y":"pt-br"}}</ion-card-subtitle> -->
             </ion-card-header>
         </ion-item>
-
-        <img (src)=item.image_Feed />
+        <img [src]="verposter(item.backdrop_path)" *ngIf="item.poster_path" />
         <ion-card-header>
-            <ion-card-subtitle>{{item.Subtitulo}}</ion-card-subtitle>
-            <ion-card-title>{{item.Titulo}}</ion-card-title>
+            <ion-card-subtitle>{{item.original_title}}</ion-card-subtitle>
+            <!-- <ion-card-title>{{item.Titulo}}</ion-card-title> -->
         </ion-card-header>
         <ion-card-content>
-            {{item.Descricao}}
+            {{item.overview}}
         </ion-card-content>
     </ion-card>
 </ion-content>

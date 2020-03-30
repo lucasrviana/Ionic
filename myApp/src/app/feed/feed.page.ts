@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoovieService } from './moovie.service';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'app-feed',
@@ -8,34 +8,31 @@ import { MoovieService } from './moovie.service';
 })
 export class FeedPage implements OnInit {
   public nome_usuario: string = "João"
-  public feed = [{
-    Nome_pessoa: "Lucas Viana",
-    Img_pessoa: "assets/Image/Avatar.jpg",
-    data_feed: "11 de Outubro de 2019",
-    image_Feed: "assets/Image/madison.jpg",
-    Subtitulo:"Destino",
-    Titulo: "Madison, WI",
-    Descricao: " Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836. "
-  },{
-    Nome_pessoa: "Izilda Carvalho",
-    Img_pessoa: "assets/Image/Avatar.jpg",
-    data_feed: "12 de Outubro de 2019",
-    image_Feed: "assets/Image/madison.jpg",
-    Subtitulo:"Destino",
-    Titulo: "São Paulo, SP",
-    Descricao: " São Paulo é um a bela cidade "
-  }]
+  public filmes = new Array<any>()
 
+  constructor(private movieService: MovieService) { }
 
-
-  constructor(private moovieService: MoovieService) { }
+  public teste;
 
   ngOnInit() {
     console.log("Bem vindo")
-    this.somaDoisNumeros(99,100);
+    this.somaDoisNumeros(99, 100);
+    this.movieService.getPopularMovies()
+      .subscribe(data => {
+        console.log(data)
+        this.filmes = data.results //= 
+      }, error => {
+        console.log(error)
+      })
+    //console.log(teste)
   }
-  
-  public somaDoisNumeros(num1:number, num2:number): void {
+
+  public verposter(url): string {
+    return this.movieService.verposter(url)
+  }
+
+
+  public somaDoisNumeros(num1: number, num2: number): void {
     //alert(`${num1}+${num2}=${num1+num2}`)
   }
 
