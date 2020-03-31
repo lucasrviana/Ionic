@@ -19,8 +19,10 @@ export class FeedPage implements OnInit {
     this.somaDoisNumeros(99, 100);
     this.movieService.getPopularMovies()
       .subscribe(data => {
+        let teste
         console.log(data)
-        this.filmes = data.results //= 
+        teste = { ...data }
+        this.filmes = teste.results
       }, error => {
         console.log(error)
       })
@@ -31,6 +33,15 @@ export class FeedPage implements OnInit {
     return this.movieService.verposter(url)
   }
 
+  public temImagem(imagem): boolean {
+    console.log(imagem)
+    if (imagem == null) {
+      
+      return false;
+    }
+    else
+      return true;
+  }
 
   public somaDoisNumeros(num1: number, num2: number): void {
     //alert(`${num1}+${num2}=${num1+num2}`)

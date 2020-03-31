@@ -12,11 +12,11 @@
             </ion-avatar> -->
             <ion-card-header>
                 <ion-card-title class="titulo">{{item.title}}</ion-card-title>
-                <ion-card-subtitle>{{item.release_date| date:'full':'+0200':'pt'}}</ion-card-subtitle>
+                <ion-card-subtitle>{{item.release_date| date:'full'}}</ion-card-subtitle>
                 <!-- <ion-card-subtitle>{{item.release_date| date: "EEEE d MMMM y":"pt-br"}}</ion-card-subtitle> -->
             </ion-card-header>
         </ion-item>
-        <img [src]="verposter(item.backdrop_path)" *ngIf="item.poster_path" />
+        <img [src]="verposter(item.backdrop_path)" [hidden]="!temImagem(item.poster_path)" />
         <ion-card-header>
             <ion-card-subtitle>{{item.original_title}}</ion-card-subtitle>
             <!-- <ion-card-title>{{item.Titulo}}</ion-card-title> -->
