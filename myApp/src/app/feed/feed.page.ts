@@ -5,6 +5,7 @@ import { MovieService } from './movie.service';
   selector: 'app-feed',
   templateUrl: './feed.page.html',
   styleUrls: ['./feed.page.scss'],
+  providers:[MovieService]
 })
 export class FeedPage implements OnInit {
   public nome_usuario: string = "João"
@@ -20,7 +21,7 @@ export class FeedPage implements OnInit {
     this.movieService.getPopularMovies()
       .subscribe(data => {
         let teste
-        console.log(data)
+        //console.log(data)
         teste = { ...data }
         this.filmes = teste.results
       }, error => {
@@ -34,9 +35,8 @@ export class FeedPage implements OnInit {
   }
 
   public temImagem(imagem): boolean {
-    console.log(imagem)
+    // console.log(imagem)
     if (imagem == null) {
-      
       return false;
     }
     else
