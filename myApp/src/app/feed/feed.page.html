@@ -16,8 +16,16 @@
                 <!-- <ion-card-subtitle>{{item.release_date| date: "EEEE d MMMM y":"pt-br"}}</ion-card-subtitle> -->
             </ion-card-header>
         </ion-item>
-        <img [src]="verposter(item.backdrop_path)" [hidden]="!temImagem(item.poster_path)" />
+        <samp *ngIf="temImagem(item.poster_path)">
+            {{temImagem(item.poster_path)}}
+            <!-- <img [src]="verposter(item.backdrop_path)"/> -->
+        </samp>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-body"></div>
+        </div>
         <ion-card-header>
+
             <ion-card-subtitle>{{item.original_title}}</ion-card-subtitle>
             <!-- <ion-card-title>{{item.Titulo}}</ion-card-title> -->
         </ion-card-header>
