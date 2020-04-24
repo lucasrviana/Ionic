@@ -1,0 +1,8 @@
+{
+  "appId": "br.com.Vianacom.myApp",
+  "appName": "myApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
