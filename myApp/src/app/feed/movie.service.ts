@@ -21,19 +21,14 @@ export class MovieService {
     // return this.http.get(this.baseApiPath+ `/movie/latest?api_key=${this.key}`)
     return this.http.get(`${this.baseApiPath}/movie/latest?api_key=${this.key}`)
   }
-
+  
   getPopularMovies() {
     // console.log(this.baseApiPath+ `/movie/latest?api_key=${this.key}`)
     // return this.http.get(this.baseApiPath+ `/movie/latest?api_key=${this.key}`)
     return this.http.get(`${this.baseApiPath}/movie/popular?api_key=${this.key}&language=pt-br`)
   }
 
-  public verposter(url: string) {
-    console.log(url);
-    if (url == null)
-      return undefined
-    else
-      return "https://image.tmdb.org/t/p/w500" + url;
-
+  public verposter(url: string){
+    return "https://image.tmdb.org/t/p/w500/"+url;
   }
 }
