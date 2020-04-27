@@ -1,0 +1,19 @@
+ion-slides {
+    min-height: 100vh !important;
+}
+
+.direito {
+    text-align: end;
+}
+
+.meio {
+    margin-top: calc(var(--ion-grid-columns, 12)/24 * 35%)
+}
+
+.fim {
+    margin-top: calc(var(--ion-grid-columns, 12)/24 * 62%)
+}
+
+.bordas img {
+    width: 80%;
+}
