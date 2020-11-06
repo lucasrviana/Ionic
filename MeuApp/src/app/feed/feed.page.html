@@ -17,8 +17,8 @@
             </ion-card-header>
         </ion-item>
         <samp *ngIf="temImagem(item.poster_path)">
-            {{temImagem(item.poster_path)}}
-            <!-- <img [src]="verposter(item.backdrop_path)"/> -->
+            <!-- {{temImagem(item.poster_path)}} -->
+            <img [src]="verposter(item.backdrop_path)"/>
         </samp>
         <div class="card">
             <img class="card-img-top">
